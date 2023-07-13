@@ -64,7 +64,7 @@ class Minter(Help):
             if chain:
                 self.chain = chain
             else:
-                return self.privatekey, 'error'
+                return self.privatekey, self.address, 'error'
 
         self.w3 = Web3(Web3.HTTPProvider(rpcs[self.chain]))
         self.account = self.w3.eth.account.from_key(self.privatekey)
